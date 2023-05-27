@@ -59,13 +59,13 @@ Voici une explication simplifiée de la façon dont le Makefile fonctionne :
 2. La variable CC est définie avec la valeur clang, ce qui spécifie que le compilateur C utilisé sera Clang.
 3. La variable CFLAGS est définie avec l'option -g -Wno-everything -pthread -lm. Ces options sont passées au compilateur pour définir les indicateurs de compilation.
  
- -g inclut les informations de débogage dans le binaire généré. 
+       -g inclut les informations de débogage dans le binaire généré. 
  
- -Wno-everything désactive tous les avertissements du compilateur. 
+       -Wno-everything désactive tous les avertissements du compilateur. 
  
- -pthread active le support des threads POSIX. 
+       -pthread active le support des threads POSIX. 
  
- -lm lie la bibliothèque mathématique lors de la compilation.
+       -lm lie la bibliothèque mathématique lors de la compilation.
 
 4. Les variables SRCS et HEADERS sont définies à l'aide de la commande find. Elles récupèrent respectivement les chemins de tous les fichiers source (.c) et les fichiers d'en-tête (.h) présents dans le répertoire courant et ses sous-répertoires, à l'exception du répertoire .ccls-cache.
 5. La cible main dépend des fichiers source ($(SRCS)) et des fichiers d'en-tête ($(HEADERS)). Si l'un de ces fichiers est modifié, la cible doit être reconstruite.
