@@ -23,10 +23,15 @@ Le plateau de jeu est un labyrinthe composé de 25 cases face retournées. Elles
  - 4 armes antiques (1 de chaque type mentionné précédemment). 
  - 2 coffres au trésor. 
  - 16 monstres répartis en différentes catégories : 
+       
        - Basilics : seul le bouclier peut les vaincre. 
+       
        - Zombies : seule la torche peut les éliminer. 
+       
        - Trolls : seule la hache peut les vaincre. 
+       
        - Harpies : seul un arc peut les vaincre. 
+ 
  - 1 portail qui permet de se téléporter. 
  - 2 totems de transmutation.
 
@@ -53,10 +58,15 @@ Voici une explication simplifiée de la façon dont le Makefile fonctionne :
 1. Tout d'abord, le Makefile définit deux cibles principales : main et main-debug.
 2. La variable CC est définie avec la valeur clang, ce qui spécifie que le compilateur C utilisé sera Clang.
 3. La variable CFLAGS est définie avec l'option -g -Wno-everything -pthread -lm. Ces options sont passées au compilateur pour définir les indicateurs de compilation.
-  -g inclut les informations de débogage dans le binaire généré. 
-  -Wno-everything désactive tous les avertissements du compilateur. 
-  -pthread active le support des threads POSIX. 
-  -lm lie la bibliothèque mathématique lors de la compilation.
+ 
+ -g inclut les informations de débogage dans le binaire généré. 
+ 
+ -Wno-everything désactive tous les avertissements du compilateur. 
+ 
+ -pthread active le support des threads POSIX. 
+ 
+ -lm lie la bibliothèque mathématique lors de la compilation.
+
 4. Les variables SRCS et HEADERS sont définies à l'aide de la commande find. Elles récupèrent respectivement les chemins de tous les fichiers source (.c) et les fichiers d'en-tête (.h) présents dans le répertoire courant et ses sous-répertoires, à l'exception du répertoire .ccls-cache.
 5. La cible main dépend des fichiers source ($(SRCS)) et des fichiers d'en-tête ($(HEADERS)). Si l'un de ces fichiers est modifié, la cible doit être reconstruite.
 6. La recette de la cible main utilise la variable CC pour appeler le compilateur C avec les indicateurs de compilation CFLAGS, les fichiers source $(SRCS) et crée l'exécutable "main" en sortie.
