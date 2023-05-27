@@ -1,0 +1,33 @@
+all: main
+
+CC = clang
+override CFLAGS += -g -Wno-everything -pthread -lm
+
+SRCS = $(shell find . -name '.ccls-cache' -type d -prune -o -type f -name '*.c' -print)
+HEADERS = $(shell find . -name '.ccls-cache' -type d -prune -o -type f -name '*.h' -print)
+
+main: $(SRCS) $(HEADERS)
+	$(CC) $(CFLAGS) $(SRCS) -o "$@"
+
+main-debug: $(SRCS) $(HEADERS)
+	$(CC) $(CFLAGS) -O0 $(SRCS) -o "$@"
+
+clean:
+	rm -f main main-debug  // Removes the main and main-debug executables
+
+// The Makefile builds two targets: main and main-debug
+
+// main target
+// Depends on the source files (SRCS) and header files (HEADERS)
+main: $(SRCS) $(HEADERS)
+	$(CC) $(CFLAGS) $(SRCS) -o "$@"
+
+// main-debug target
+// Similar to the main target, but includes the -O0 flag for debugging-friendly code
+main-debug: $(SRCS) $(HEADERS)
+	$(CC) $(CFLAGS) -O0 $(SRCS) -o "$@"
+
+// clean target
+// Removes the main and main-debug executables
+clean:
+	rm -f main main-debug
