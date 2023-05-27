@@ -1,0 +1,22 @@
+Players :
+    -pierre :
+           Number of victories :0
+           Number of Monsters defeated : 0
+           Number of cards returned : 2
+           Number of treasure found : 0
+    -samy :
+           Number of victories :1
+           Number of Monsters defeated : 0
+           Number of cards returned : 2
+           Number of treasure found : 1
+    - :
+           Number of victories :0
+           Number of Monsters defeated : 0
+           Number of cards returned : 0
+           Number of treasure found : 0
+    - :
+           Number of victories :0
+           Number of Monsters defeated : 0
+           Number of cards returned : 0
+           Number of treasure found : 0
+Number of Games : 1
